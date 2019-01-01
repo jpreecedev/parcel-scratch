@@ -1,6 +1,4 @@
 {
-"env": {
-  "development": {
     "presets": ["@babel/preset-react"],
     "plugins": [
       "@babel/plugin-transform-runtime",
@@ -13,37 +11,22 @@
       "@babel/plugin-transform-react-inline-elements",
       "@babel/plugin-transform-react-constant-elements",
       "react-hot-loader/babel"
-    ]
-  },
-  "production": {
-    "presets": ["@babel/preset-react"],
-    "plugins": [
-      "@babel/plugin-transform-runtime",
-      [
-        "@babel/plugin-proposal-class-properties",
-        {
-          "loose": true
-        }
-      ],
-      "@babel/plugin-transform-react-inline-elements",
-      "@babel/plugin-transform-react-constant-elements",
-      "react-hot-loader/babel"
-    ]
-  },
-  "test": {
-    "presets": ["@babel/preset-env", "@babel/preset-react"],
-    "plugins": [
-      "@babel/plugin-transform-runtime",
-      [
-        "@babel/plugin-proposal-class-properties",
-        {
-          "loose": true
-        }
-      ],
-      "@babel/plugin-transform-react-inline-elements",
-      "@babel/plugin-transform-react-constant-elements",
-      "react-hot-loader/babel"
-    ]
-  }
-}
+    ],
+    "env": {
+      "test":{
+        "presets": ["@babel/preset-env", "@babel/preset-react"],
+        "plugins": [
+          "@babel/plugin-transform-runtime",
+          [
+            "@babel/plugin-proposal-class-properties",
+            {
+              "loose": true
+            }
+          ],
+          "@babel/plugin-transform-react-inline-elements",
+          "@babel/plugin-transform-react-constant-elements",
+          "react-hot-loader/babel"
+        ]
+      }
+    }
 }
