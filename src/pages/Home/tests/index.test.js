@@ -1,29 +1,25 @@
 import * as React from 'react'
-import { shallow } from 'enzyme'
-
+import { render, cleanup, fireEvent } from 'react-testing-library'
+import 'jest-dom/extend-expect'
 import Home from '..'
-
-function render(props) {
-  return shallow(<Home {...props} />)
-}
 
 beforeAll(() => {
   global.alert = jest.fn()
 })
 
+afterEach(cleanup)
+
 test('should render "Hello, World!" as title', () => {
-  const renderedComponent = render()
-  const header = renderedComponent.find('h1')
-  expect(header.text()).toBe(
-    'A bare bones Parcel.js, React, Jest, Babel 7 starter project'
-  )
+  const { getByText } = render(<Home />)
+  expect(
+    getByText(/A bare bones Parcel.js, React, Jest, Babel 7 starter project/i)
+  ).toBeTruthy()
 })
 
 test('should show an alert with the message', () => {
-  const renderedComponent = render()
-  const button = renderedComponent.find('button')
+  const { getByText } = render(<Home />)
 
-  button.simulate('click')
+  fireEvent.click(getByText(/Show me a message/i))
 
   expect(global.alert).toHaveBeenCalledTimes(1)
   expect(global.alert).toHaveBeenCalledWith('Hello, World!')
