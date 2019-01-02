@@ -26,4 +26,7 @@ npm run lint
 
 # Run unit tests
 npm test
+
+# Run end-to-end (e2e) tests
+npm run e2e
 ```
