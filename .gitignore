@@ -2,3 +2,5 @@ node_modules
 .cache
 dist
 coverage
+cypress/videos
+cypress/screenshots

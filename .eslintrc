@@ -10,10 +10,16 @@
   },
   "env": {
     "browser": true,
-    "jest/globals": true
+    "jest/globals": true,
+    "cypress/globals": true
   },
-  "plugins": ["jest"],
-  "extends": ["airbnb", "prettier", "plugin:jest/recommended"],
+  "plugins": ["jest", "cypress"],
+  "extends": [
+    "airbnb",
+    "prettier",
+    "plugin:jest/recommended",
+    "plugin:cypress/recommended"
+  ],
   "rules": {
     "react/prop-types": "off",
     "react/jsx-filename-extension": [1, { "extensions": [".js"] }]

@@ -11,7 +11,10 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
-    "test:debug": "node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand --watch"
+    "test:debug": "node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand --watch",
+    "e2e": "cypress run",
+    "e2e:open": "cypress open",
+    "e2e:lint": "eslint ./cypress"
   },
   "keywords": [],
   "author": "",
@@ -43,6 +46,7 @@
     "eslint": "^5.11.1",
     "eslint-config-airbnb": "17.1.0",
     "eslint-config-prettier": "^3.3.0",
+    "eslint-plugin-cypress": "^2.2.0",
     "eslint-plugin-import": "2.14.0",
     "eslint-plugin-jest": "^22.1.2",
     "eslint-plugin-jsx-a11y": "^6.1.1",
